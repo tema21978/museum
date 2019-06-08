@@ -8,8 +8,12 @@
     margin: 0 auto;
 }
 .wrap-menu  {
-    height: 100px;
-    background: #1c9675;
+    width: 100%;
+    height: 80px;
+    background: #222;
+    position: fixed;
+    z-index: 1000;
+
 }
 .menu {
     display: flex;
@@ -22,8 +26,9 @@
 }
 .menu-logotype__logo {
     background: url("./img/logo.png") no-repeat;
-    width: 100px;
-    height: 100px;
+    background-size: cover;
+    width: 80px;
+    height: 80px;
 }
 .name {
     text-transform: uppercase;
@@ -31,7 +36,7 @@
     -webkit-text-stroke: 1px #fff;
     -webkit-text-fill-color: transparent;
     font-size: 18px;
-
+    letter-spacing: 2px;
 }
 .menu-list ul {
     display: flex;
@@ -44,6 +49,7 @@
     font-size: 20px;
     position: relative;
     padding-bottom: 5px;
+    letter-spacing: 4px;
 }
 .menu-list a:before {
     content: "";
@@ -73,27 +79,158 @@
 .wrap-hats {
     width: 100%;
     height: 525px;
-    background: #f3cc5a;
+    padding-top: 80px;
 }
-.hats {
+/*Слайдер*/
+.slider {
+    width: 100%;
+    height: 625px;
+    position: relative;
+    overflow: hidden;
+}
+.slider-item {
+    opacity:0;
+}
+.showing {
+    opacity: 1;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.slider-item img {
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    z-index: -1;
+}
+.slider-item__text {
+    width: 100%;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 30px;
+    color: #fff;
     display: flex;
-    justify-content: space-between;
-    align-items: center;    
+    justify-content: center;
+    align-items: center;
 }
-.hats-text {
-    width: 400px;
-    text-transform: uppercase;
-    color: #333;
+.slider-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    font-size: 20px;
+    width: 40px;
+    height: 50px;
+    opacity: .5;
+    background: #000;
+    text-decoration: none;
+    outline: 0;
+    transition: .3s;
 }
-.hats-slider {
-    width: 650px;
-    height: 465px;
-    background: #333;
-    margin-top: 30px;
+.slider-control:hover {
+    opacity: 0.9;
+    width: 45px;
+    height: 55px;
 }
+.btn-left, .btn-right {
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+.btn-left:active::before, .btn-right:active::before {
+    width: 16px;
+    height: 16px;
+}
+.btn-right {
+    position: absolute;
+    right: 0;
+}
+.btn-right:before {
+    content: "";
+    background: url("./img/strelka.png") no-repeat center;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    transition: .1s;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
+    -ms-transition: .1s;
+    -o-transition: .1s;
+}
+.btn-left:before {
+    content: "";
+    background: url("./img/strelka.png") no-repeat center;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transition: .1s;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
+    -ms-transition: .1s;
+    -o-transition: .1s;
+}
+/* Кружочки */
+.slider-dots {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1;
+}
+.slider-dots_item {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    margin-right: 10px;
+}
+.active,
+.slider-dots_item:hover {
+    background-color: #aaa;
+}
+/* Анимация слайдов */
+@keyframes slideOutRight {
+    from {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+      visibility: hidden;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+  
+.slideOutRight {
+    animation: slideOutRight 2s ease-in-out;
+    -webkit-animation: slideOutRight 2s ease-in-out;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
+}
+/*Конец кода слайдера*/
 .about-museum {
+    margin-top: 120px;
     padding-top: 60px;
 }
 .title {
@@ -256,4 +393,24 @@ h4 {
 .contacts-info__text h4, p {
     color: #fff;
     padding-bottom: 12px;
+}
+footer {
+    height: 100px;
+    background: #333;
+    margin-top: 20px;
+}
+.footer-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+.footer-copyright {
+    color: #fff;
+}
+.footer-social {   
+    background: url("./img/Icons.png") no-repeat;
+    width: 200px;
+    height: 35px;
+    cursor: pointer;
 }
