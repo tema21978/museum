@@ -1,4 +1,5 @@
 window.onload = () => {
+    /*Слайдер*/
     let slides = document.querySelectorAll(".slider-item"), 
         num = 0,
         slideMinus = document.querySelector(".btn-left"),
@@ -35,4 +36,16 @@ window.onload = () => {
         slider_dots[num].className = 'slider-dots_item active'; 
     }
     setInterval(autoSlide,7000);
+    /*Конец кода слайдера*/
+    /*Фича - Скролл менюшки
+    var scrolled;
+    window.onscroll = function() {
+    scrolled = window.pageYOffset || document.documentElement.scrollTop;
+    if(scrolled < 600){
+        $(".wrap-menu").css("opacity", "1");       
+    }
+    if(scrolled > 600) {
+        $(".wrap-menu").css("opacity","0.7");  
+    }
+    }*/
 }
