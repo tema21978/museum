@@ -48,4 +48,39 @@ window.onload = () => {
         $(".wrap-menu").css("opacity","0.7");  
     }
     }*/
+    /*Скролл*/
+$(document).ready(function(){
+    $('.home').click(function(){
+        var scroll_el = $(this).attr('href');
+        if ($(scroll_el).length != 0) {
+            $('html, body').animate({
+                scrollTop: $(scroll_el).offset().top },500);
+        }
+                return false;
+    });
+    $('.museum-menu').click(function(){
+        var scroll_el = $(this).attr('href');
+        if ($(scroll_el).length != 0) {
+            $('html, body').animate({
+                scrollTop: $(scroll_el).offset().top },500);
+        }
+                return false;
+    });
+    $('.gallery-menu').click(function(){
+        var scroll_el = $(this).attr('href');
+        if ($(scroll_el).length != 0) {
+            $('html, body').animate({
+                scrollTop: $(scroll_el).offset().top },500);
+        }
+                return false;
+    });
+    $('.contact-menu').click(function(){
+        var scroll_el = $(this).attr('href');
+        if ($(scroll_el).length != 0) {
+            $('html, body').animate({
+                scrollTop: $(scroll_el).offset().top },500);
+        }
+                return false;
+    });
+});
 }
