@@ -415,3 +415,10 @@ footer {
     height: 35px;
     cursor: pointer;
 }
+
+
+
+/*Для Jquery*/
+.conctacts-info__text .ff::selection {
+    color: red;
+}

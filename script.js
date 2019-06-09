@@ -82,5 +82,33 @@ $(document).ready(function(){
         }
                 return false;
     });
+    $(".conctacts-info__text p").addClass("ff");
+            /*$('a').hover(
+            function() {
+                $('a').css('color','orange');
+            },
+            function() {
+                $('a').css('color','#fff');
+            }
+        );*/
+    var i = 0;
+    $(".form__button").click(function(){
+        i++;
+        console.log(i);
+            $('.conctacts-info__text p').css("color","green");
+            $('.conctacts-info__text p').css("font-size","20px");
+		if (i == 2) {
+		    $(".conctacts-info__text p").css("color","red").css("font-family","Times New Roman").css("font-size","16px");
+		}
+		if (i == 3) {
+			$(".conctacts-info__text p").css("color","blue").css("font-family","Arial");
+		}
+		if (i == 4) {
+			$(".conctacts-info__text p").css("color","#fff").css("font-family","Verdana").css("font-weight","bold").css("border","1px solid yellow");
+		} else if (i > 4) {
+			$(".conctacts-info__text p").css("color","#fff").css("font-family","Arial").css("font-size","16px").css("font-weight","300").css("border","none");
+			i = 0;
+        }
+    });
 });
 }
