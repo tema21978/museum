@@ -135,6 +135,10 @@
     text-decoration: none;
     outline: 0;
     transition: .3s;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
 }
 .slider-control:hover {
     opacity: 0.9;
@@ -243,7 +247,7 @@
     margin-bottom: 45px;
 }
 .line {
-    background: #ec6593;
+    background: #EF461D;
     width: 100px;
     height: 10px;
     border-radius: 10px;
@@ -288,7 +292,7 @@
     content: "";
     width: 100%;
     height: 100%;
-    background: #5b306c;
+    background: #EF461D;
     position: absolute;
     top: 0;
     left: 0;
@@ -362,7 +366,7 @@
 	line-height: 28px;
 }
 .form__button {
-    background: #ec6593;
+    background: #EF461D;
     color: #fff;
     border: none;
     outline: none;
